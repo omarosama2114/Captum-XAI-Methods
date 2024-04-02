@@ -46,7 +46,7 @@ tcav.compute_cavs(experimental_sets)
 
 test_images = load_images_from_folder('test_images', transform)
 
-target_class_idx = 340
+target_class_idx = 340  # The index of the target class 'Zebra' in ImageNet
 
 # Create a tensor with the target class index repeated for as many times as there are test images
 target_class_index = torch.tensor([target_class_idx for _ in range(test_images.size(0))])

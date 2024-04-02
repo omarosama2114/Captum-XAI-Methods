@@ -40,7 +40,6 @@ max_prob, class_idx = torch.max(probabilities, 1)
 predicted_label = imagenet_labels[class_idx.item()]
 print(f"The predicted class index {class_idx.item()} corresponds to the label '{predicted_label}'.")
 
-
 guided_gc = GuidedGradCam(model, target_layer)
 # Compute the Guided Grad-CAM attributions
 attributions_ggc = guided_gc.attribute(input_img, target=class_idx)
@@ -70,5 +69,5 @@ overlay_img = np.clip(overlay_img, 0, 1)
 # Display the image
 plt.imshow(overlay_img)
 plt.axis('off')  # Hide the axes
-plt.title("Guided GradCAM Overlay")
+plt.title(f"The predicted class index {class_idx.item()} corresponds to the label '{predicted_label}'.")
 plt.show()
